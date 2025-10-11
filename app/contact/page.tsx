@@ -10,6 +10,9 @@ export default function Contact() {
 
         <div className="text-lg font-medium">
           <p className="mb-2">
+            ✉️ CV: <a href="mailto:your.email@example.com" className="text-blue-600 underline">CV</a>
+          </p>
+          <p className="mb-2">
             ✉️ Email: <a href="mailto:your.email@example.com" className="text-blue-600 underline">your.email@example.com</a>
           </p>
           <p className="mb-2">
