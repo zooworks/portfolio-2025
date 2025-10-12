@@ -6,7 +6,7 @@ import Sidebar from "../components/Sidebar";
 import Footer from "../components/Footer";
 import { Roboto } from "next/font/google";
 import Header from "@/components/Header";
-import MobileHeader from "@/components/MobileHeader";
+// import MobileHeader from "@/components/MobileHeader";
 
 const roboto = Roboto({
   subsets: ["latin"],
