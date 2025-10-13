@@ -146,21 +146,21 @@ export default function Project1Page() {
           {/* Circle 1 */}
           <div
             className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
-                    flex flex-col items-center justify-center text-center bg-white px-4"
+                  flex flex-col items-center justify-center text-center bg-white px-4 z-20"
           >
             <h3 className="font-bold text-lg mb-1">Terminology</h3>
             <p className="text-sm text-gray-500 leading-tight text-pretty">
               Hard-to-grasp concepts like{" "}
-              <span className="font-semibold">Decentralization</span> and{" "}
-              <span className="font-semibold">Smart contracts</span>
+              <span className="font-semibold">Decentralization</span> and
+              <span className="font-semibold"> Smart contracts</span>
             </p>
           </div>
 
-          {/* Circle 2 (모바일 겹침 제거) */}
+          {/* Circle 2 (모바일에서도 살짝 겹치기) */}
           <div
             className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
-                    flex flex-col items-center justify-center text-center px-6
-                    mt-6 md:mt-0 md:-ml-12"
+                  flex flex-col items-center justify-center text-center px-6
+                  -mt-10 md:mt-0 md:-ml-12 bg-white z-10"
           >
             <h3 className="font-bold text-lg mb-1">Usability</h3>
             <p className="text-sm text-gray-500 leading-tight">
@@ -335,6 +335,21 @@ export default function Project1Page() {
       {/* 4. IA & Wireframe */}
       <section className="mt-20">
         <h2 className="text-2xl font-bold mb-4">4. IA & Wireframe</h2>
+        <p className="text-base text-gray-700 mb-20 text-pretty">
+          Designed the IA to create an intuitive and efficient flow that guides
+          users seamlessly from photo verification to point accumulation and
+          reward redemption.
+          <div className="flex justify-center">
+            <img
+              src="/IAsnapcash.png"
+              alt="Information Architecture Diagram"
+              className="max-w-full"
+            />
+          </div>
+          <p className="text-sm text-gray-400 text-center mt-2">
+            *IA & Wireframe for Snapcash app
+          </p>
+        </p>
       </section>
 
       {/* 5. Why NFTCAM? */}
@@ -342,137 +357,88 @@ export default function Project1Page() {
         <h2 className="text-2xl font-bold mb-4">5. Why NFTCAM?</h2>
 
         {/* Solution */}
-        <div className="mb-16">
-          <p className="text-base text-gray-700 mb-20 text-pretty">
-            NFTCAM was created to address these issues. The app allows users to
-            mint NFTs as easily as taking a photo, simplifying the wallet and
-            exchange process while adding gamification and rewards for a more
-            engaging experience.
-          </p>
-          {/* 두 원: 모바일은 세로, 데스크탑은 가로 겹침 */}
-          <div className="mt-10 flex flex-col items-center md:flex-row md:justify-center md:gap-8">
-            {/* Circle 1 */}
-            <div
-              className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
-                    flex flex-col items-center justify-center text-center bg-white px-4"
-            >
-              <h3 className="font-bold text-lg mb-1">Simplicity</h3>
-              <p className="text-sm text-gray-500 leading-tight">
-                Minimize steps, make minting as easy as a camera click.
-              </p>
-            </div>
+        {/* 두 원: 모바일은 세로로 겹침, 데스크탑은 가로 배치 */}
+        <div className="mt-10 flex flex-col items-center md:flex-row md:justify-center md:gap-8">
+          {/* Circle 1 */}
+          <div
+            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
+      flex flex-col items-center justify-center text-center bg-white px-4 z-30"
+          >
+            <h3 className="font-bold text-lg mb-1">Simplicity</h3>
+            <p className="text-sm text-gray-500 leading-tight">
+              Minimize steps, make minting as easy as a camera click.
+            </p>
+          </div>
 
-            {/* Circle 2 */}
-            <div
-              className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
-                    flex flex-col items-center justify-center text-center px-6
-                    mt-6 md:mt-0 md:-ml-12"
-            >
-              <h3 className="font-bold text-lg mb-1">Familiarity</h3>
-              <p className="text-sm text-gray-500 leading-tight">
-                Use patterns users already know (camera UI, reward systems).
-              </p>
-            </div>
+          {/* Circle 2 */}
+          <div
+            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
+      flex flex-col items-center justify-center text-center px-6
+      -mt-10 md:mt-0 md:-ml-12 bg-white z-20"
+          >
+            <h3 className="font-bold text-lg mb-1">Familiarity</h3>
+            <p className="text-sm text-gray-500 leading-tight">
+              Use patterns users already know (camera UI, reward systems).
+            </p>
+          </div>
 
-            {/* Circle 3 */}
-            <div
-              className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
-                    flex flex-col items-center justify-center text-center px-6
-                    mt-6 md:mt-0 md:-ml-12"
-            >
-              <h3 className="font-bold text-lg mb-1">Engagement</h3>
-              <p className="text-sm text-gray-500 leading-tight">
-                Add gamification and social feedback loops to keep users active.
-              </p>
-            </div>
+          {/* Circle 3 */}
+          <div
+            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
+      flex flex-col items-center justify-center text-center px-6
+      -mt-10 md:mt-0 md:-ml-12 bg-white z-10"
+          >
+            <h3 className="font-bold text-lg mb-1">Engagement</h3>
+            <p className="text-sm text-gray-500 leading-tight">
+              Add gamification and social feedback loops to keep users active.
+            </p>
           </div>
         </div>
       </section>
 
       <section className="mt-16">
-        <h2 className="text-2xl font-bold mb-4">5. Design System</h2>
+        <h2 className="text-2xl font-bold mb-4">6. Design System</h2>
         <p className="text-base text-gray-600 mb-8">
-          The foundation of the NFTCAM Design System ensures consistency across
-          layout, spacing, and radius. These guidelines help maintain a unified
-          look and feel throughout the product.
+          The foundation of the Snapcash Design System ensures consistency
+          across layout, spacing, and radius. These guidelines help maintain a
+          unified look and feel throughout the product.
         </p>
 
-        {/* Layout */}
-        <div className="mb-12">
-          <h3 className="text-xl font-semibold text-purple-600 mb-4">Layout</h3>
-          <div className="flex flex-col md:flex-row gap-8">
-            <div className="flex-1 bg-gray-50 p-6 rounded-xl shadow">
-              <ul className="text-sm text-gray-700 space-y-2">
-                <li>Status Bar: 24px</li>
-                <li>Navigation Bar: 44px</li>
-                <li>Left & Right Margin: 20px</li>
-                <li>Bottom Margin: 12/48px</li>
-                <li>Columns: 6px</li>
-                <li>Gutter: 16px</li>
-              </ul>
-            </div>
-            <div className="flex-1 flex items-center justify-center bg-pink-50 rounded-xl">
-              <span className="text-gray-400 italic text-sm">
-                [Layout Grid Example]
-              </span>
-            </div>
-          </div>
+        {/* ✅ 데스크탑 전용 이미지 */}
+        <div className="hidden md:flex justify-center">
+          <img
+            src="/SnapcashDesignSystem.jpg"
+            alt="Snapcash Design System"
+            className="max-w-full"
+          />
         </div>
 
-        {/* Radius */}
-        <div className="mb-12">
-          <h3 className="text-xl font-semibold text-purple-600 mb-4">Radius</h3>
-          <div className="grid grid-cols-5 gap-4">
-            {[
-              { label: "xtiny", size: 4 },
-              { label: "tiny", size: 8 },
-              { label: "small", size: 12 },
-              { label: "base", size: 16 },
-              { label: "medium", size: 24 },
-            ].map((r) => (
-              <div key={r.label} className="flex flex-col items-center">
-                <div
-                  className="bg-gray-200"
-                  style={{
-                    width: "60px",
-                    height: "60px",
-                    borderRadius: `${r.size}px`,
-                  }}
-                />
-                <span className="text-sm mt-2 font-medium">{r.size}px</span>
-                <span className="text-xs text-gray-500">{r.label}</span>
-              </div>
-            ))}
-          </div>
+        {/* ✅ 모바일 전용 이미지 (두 장 세로 배치) */}
+        <div className="flex flex-col items-center gap-4 md:hidden">
+          <img
+            src="/SnapcashDesignSystemMobile1-1.jpg.jpg"
+            alt="Snapcash Design System Mobile Part 1"
+            className="w-full max-w-sm"
+          />
+          <img
+            src="/SnapcashDesignSystemMobile1-2.jpg.jpg"
+            alt="Snapcash Design System Mobile Part 2"
+            className="w-full max-w-sm"
+          />
         </div>
+      </section>
 
-        {/* Spacing */}
-        <div className="mb-12">
-          <h3 className="text-xl font-semibold text-purple-600 mb-4">
-            Spacing
-          </h3>
-          <div className="grid grid-cols-4 md:grid-cols-8 gap-4">
-            {[
-              { label: "xtiny", size: 4 },
-              { label: "tiny", size: 8 },
-              { label: "xsmall", size: 12 },
-              { label: "small", size: 16 },
-              { label: "base", size: 24 },
-              { label: "medium", size: 32 },
-              { label: "large", size: 48 },
-              { label: "xlarge", size: 64 },
-            ].map((s) => (
-              <div key={s.label} className="flex flex-col items-center">
-                <div
-                  className="bg-purple-200"
-                  style={{ width: `${s.size}px`, height: "20px" }}
-                />
-                <span className="text-sm mt-2 font-medium">{s.size}px</span>
-                <span className="text-xs text-gray-500">{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+      <section className="mt-16">
+        <h2 className="text-2xl font-bold mb-4">7. Main UI</h2>
+        <p className="text-base text-gray-600 mb-8">
+          The main UI was designed to allow users to easily view their reward
+          status and available missions at a glance, check detailed conditions,
+          and take immediate action. By incorporating map-based navigation and a
+          camera verification screen, the location and photo-based participation
+          process was simplified. Compared to conventional reward apps, the
+          3-step flow — Select Mission → Verify → Earn Reward — enhances
+          intuitiveness and efficiency.
+        </p>
       </section>
 
       {/* Footer 여백 */}

@@ -1,19 +1,13 @@
 // app/page.tsx
-// 루트 페이지
-import { redirect } from "next/navigation";
+// 루트("/")에서 바로 Work 페이지 내용을 렌더링
+
+import Work from "./work/page"; // ./app/work/page.tsx 의 default export를 불러옴
+
+export const metadata = {
+  title: "Work — Joosung Kim",
+  description: "Selected product design works by Joosung Kim.",
+};
 
 export default function Home() {
-  redirect("/work");
-  return (
-    <>
-      <div className="px-6 py-24 text-center max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-4 sm:text-5xl md:text-6xl">
-          Joosung
-        </h1>
-        <p className="text-lg text-gray-500">
-          A designer crafting thoughtful digital experiences.
-        </p>
-      </div>
-    </>
-  );
+  return <Work />;
 }
