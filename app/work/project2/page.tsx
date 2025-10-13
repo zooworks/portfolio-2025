@@ -264,7 +264,7 @@ export default function Project1Page() {
               body: "Users disengage after short-term use because interactions feel repetitive.",
               solutionTitle: "Solution 04",
               solutionBody:
-                "Users disengage after short-term use because interactions feel repetitive.",
+                "Enhancing immediate rewards to maximize short-term engagement motivation.",
               // ✅ 점 아이콘 사용
               icon: (
                 <img
@@ -310,9 +310,36 @@ export default function Project1Page() {
         </div>
       </section>
 
-      {/* 4. Why NFTCAM? */}
+      {/* 삼각형 화살표 */}
+      <div
+        aria-hidden
+        className="my-5 mx-auto w-0 h-0 
+             border-l-[14px] border-r-[14px] 
+             border-l-transparent border-r-transparent 
+             border-t-[20px] border-t-sky-500"
+      />
+
+      {/* Service Goal banner */}
+      <section className="mt-10 md:mt-6">
+        <div className="rounded-2xl border border-indigo-100 bg-indigo-50/40 px-4 py-14 md:px-8 md:py-7">
+          <p className="text-center text-sm font-semibold text-sky-600">
+            Service Goal
+          </p>
+          <p className="mt-2 text-center text-lg md:text-xl font-semibold text-gray-900">
+            Securely record photo verification as NFTs and boost motivation with
+            instant rewards.
+          </p>
+        </div>
+      </section>
+
+      {/* 4. IA & Wireframe */}
       <section className="mt-20">
-        <h2 className="text-2xl font-bold mb-4">4. Why NFTCAM?</h2>
+        <h2 className="text-2xl font-bold mb-4">4. IA & Wireframe</h2>
+      </section>
+
+      {/* 5. Why NFTCAM? */}
+      <section className="mt-20">
+        <h2 className="text-2xl font-bold mb-4">5. Why NFTCAM?</h2>
 
         {/* Solution */}
         <div className="mb-16">

@@ -4,22 +4,39 @@ import Link from "next/link";
 export default function Work() {
   return (
     <>
-      <div className="px-6 max-w-4xl mx-auto">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
-          Hello, I’m <span className="font-semibold text-black">Joosung</span>.
-        </h1>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-tight mt-2">
-          I’m a Product Designer
-        </h2>
-        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-tight mt-2">
-          who crafts <span className="font-semibold text-black">clear</span>,{" "}
-          <span className="font-semibold text-black">intuitive</span>,<br />
-          and{" "}
-          <span className="font-semibold text-black">
-            emotionally resonant
-          </span>{" "}
-          experiences.
-        </h3>
+      <div className="px-6 max-w-4xl mx-auto antialiased">
+        {/* 헤딩들 사이 간격은 space-y로 통일 */}
+        <div className="space-y-1.5 md:space-y-2">
+          <h1
+            className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl
+                   font-light leading-[1.15] tracking-[-0.01em]"
+          >
+            Hello, I’m <span className="font-semibold text-black">Joosung</span>
+            .
+          </h1>
+
+          <h2
+            className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl
+                   font-light leading-[1.15] tracking-[-0.01em]"
+          >
+            I’m a Product Designer
+          </h2>
+
+          <h3
+            className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl
+                   font-light leading-[1.15] tracking-[-0.01em]"
+          >
+            who crafts <span className="font-semibold text-black">clear</span>,{" "}
+            <span className="font-semibold text-black">intuitive</span>,
+            <br className="hidden sm:block" />
+            and{" "}
+            <span className="font-semibold text-black">
+              emotionally resonant
+            </span>{" "}
+            experiences.
+          </h3>
+        </div>
+
         <p className="mt-6 text-sm text-gray-500 uppercase tracking-wide">
           Based in Seoul
           <br />
@@ -44,7 +61,7 @@ export default function Work() {
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
               <div className="absolute inset-0 flex flex-col justify-end p-4">
-                <h3 className="text-white text-sm sm:text-base font-semibold leading-tight">
+                <h3 className="text-white text-sm sm:text-base font-semibold">
                   Snap Cash - Instant NFT Minting Camera Solution
                 </h3>
                 <p className="text-white text-xs sm:text-sm mt-1">

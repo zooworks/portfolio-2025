@@ -1,27 +1,28 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// app/layout.tsx
 import "./globals.css";
+import type { Metadata } from "next";
 import Link from "next/link";
-import Sidebar from "../components/Sidebar";
-import Footer from "../components/Footer";
-import { Roboto } from "next/font/google";
-import Header from "@/components/Header";
-// import MobileHeader from "@/components/MobileHeader";
+import Sidebar from "@/components/Sidebar";
+import Footer from "@/components/Footer";
+
+import { Manrope, Roboto, Geist, Geist_Mono } from "next/font/google";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-manrope",
+});
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"], // 원하는 굵기만 선택 가능
-  variable: "--font-roboto", // 커스텀 변수명
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-roboto",
 });
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
+const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
@@ -31,13 +32,18 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className={`${roboto.variable} font-sans antialiased`}>
-        {/* ✅ 모바일 헤더는 항상 최상단에 */}
+    // 필요하면 roboto.variable 제거 가능
+    <html
+      lang="en"
+      className={`${manrope.variable} ${roboto.variable} ${geistSans.variable} ${geistMono.variable}`}
+    >
+      {/* font-sans를 Manrope로 매핑했다면 전체가 Manrope로 표시됩니다 */}
+      <body className="bg-white text-gray-900 font-sans antialiased">
+        {/* 모바일 헤더 */}
         <header className="md:hidden w-full px-6 py-4 flex justify-between items-center border-b fixed bg-white z-50">
           <span className="font-bold text-xl">JOOSUNG KIM</span>
           <nav className="flex space-x-4 text-sm text-gray-600">
@@ -53,14 +59,11 @@ export default function RootLayout({
           </nav>
         </header>
 
-        {/* ✅ 전체 레이아웃 */}
+        {/* 전체 레이아웃 */}
         <div className="flex min-h-screen">
-          {/* 데스크탑 전용 사이드바 */}
           <div className="hidden md:flex">
             <Sidebar />
           </div>
-
-          {/* 메인 콘텐츠 + 푸터 */}
           <div className="flex flex-col flex-1 w-full px-6 pt-10 md:ml-64 mt-[64px] md:mt-0">
             <div className="flex-1">{children}</div>
             <Footer />

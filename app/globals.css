@@ -36,3 +36,11 @@ body {
   font-size: 14px !important;
   fill: #171717 !important; /* 원하면 색상 통일 */
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
