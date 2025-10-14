@@ -32,7 +32,7 @@ export default function Sidebar() {
         href="/work"
         className="text-2xl font-bold mb-10 hover:underline text-left"
       >
-        JOOSUNG
+        JOOSUNG KIM
       </Link>
       <nav className="flex flex-col space-y-4 text-xl text-gray-600">
         <Link

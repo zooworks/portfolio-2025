@@ -3,6 +3,7 @@ import SurveyChartReviewInsight1 from "@/components/SurveyChartReviewInsight1";
 import SurveyChartFactor from "@/components/SurveyChartFactor";
 import SurveyChartMenuDifficulty from "@/components/SurveyChartMenuDifficulty";
 import ClientInlineNFTCharts from "./ClientInlineNFTCharts";
+import Results from "@/components/Results";
 
 // Persona
 import MobilePersonaCards from "@/components/MobilePersonaCards";
@@ -49,7 +50,7 @@ export default function Project1Page() {
   return (
     <div className="px-6 py-10 max-w-6xl mx-auto">
       <h1 className="text-4xl font-bold mb-6">
-        Snap Cash - Instant NFT Minting Camera Solution
+        Snapcash - Instant NFT Minting Camera Solution
       </h1>
 
       <p className="text-lg text-gray-700 mb-4">
@@ -396,9 +397,9 @@ export default function Project1Page() {
         </div>
       </section>
 
-      <section className="mt-16">
+      <section className="mt-8">
         <h2 className="text-2xl font-bold mb-4">6. Design System</h2>
-        <p className="text-base text-gray-600 mb-8">
+        <p className="text-base text-gray-600 mb-4">
           The foundation of the Snapcash Design System ensures consistency
           across layout, spacing, and radius. These guidelines help maintain a
           unified look and feel throughout the product.
@@ -428,19 +429,107 @@ export default function Project1Page() {
         </div>
       </section>
 
-      <section className="mt-16">
-        <h2 className="text-2xl font-bold mb-4">7. Main UI</h2>
-        <p className="text-base text-gray-600 mb-8">
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold mb-3">7. Main UI</h2>
+
+        <p className="text-base text-gray-600 mb-6 leading-relaxed">
           The main UI was designed to allow users to easily view their reward
           status and available missions at a glance, check detailed conditions,
           and take immediate action. By incorporating map-based navigation and a
           camera verification screen, the location and photo-based participation
           process was simplified. Compared to conventional reward apps, the
-          3-step flow — Select Mission → Verify → Earn Reward — enhances
-          intuitiveness and efficiency.
+          3-step flow —
+          <span className="font-medium">
+            {" "}
+            Select Mission → Verify → Earn Reward{" "}
+          </span>
+          — enhances intuitiveness and efficiency.
         </p>
+
+        {/* ✅ 데스크탑 전용 이미지 */}
+        <div className="hidden md:flex justify-center mt-10">
+          <img
+            src="/snapcashui1.png"
+            alt="Snapcash Main UI"
+            className="max-w-5xl w-full"
+          />
+        </div>
+
+        {/* ✅ 모바일 전용 이미지 (두 장 세로 배치) */}
+        <div className="flex flex-col items-center gap-3 mt-8 md:hidden">
+          <img
+            src="/snapcashui2.png"
+            alt="Snapcash Main UI Mobile"
+            className="w-[85%] max-w-[320px] scale-95"
+          />
+        </div>
+
+        <p className="text-base text-gray-600 mb-6 leading-relaxed mt-20">
+          NFT-related functionalities were limited to the admin interface,
+          whereas the user app expressed it simply as “your photos are securely
+          recorded” — reducing the sense of technical complexity and making the
+          experience more approachable.
+        </p>
+        {/* ✅ 데스크탑 전용 이미지 */}
+        <div className="hidden md:flex justify-center mt-10">
+          <img
+            src="/snapcashui3.png"
+            alt="Snapcash Main UI"
+            className="max-w-5xl w-full"
+          />
+        </div>
+
+        {/* ✅ 모바일 전용 이미지 (두 장 세로 배치) */}
+        <div className="flex flex-col items-center gap-3 mt-8 md:hidden">
+          <img
+            src="/snapcashui4.png"
+            alt="Snapcash Main UI Mobile"
+            className="w-[85%] max-w-[320px]"
+          />
+        </div>
       </section>
 
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold mb-3">8. Results</h2>
+        <h3>
+          <span className="text-xl font-medium">
+            {" "}
+            Service Journey and Beyond{" "}
+          </span>
+        </h3>
+        <p className="text-base text-gray-600 mb-6 leading-relaxed">
+          After launching the Snapcash app on iOS and Android stores, we
+          validated the flow — from photo verification to point accumulation and
+          reward redemption — with users primarily in their 20s and 30s,
+          confirming the product’s market fit.
+        </p>
+        <Results />
+        <div className="flex justify-center gap-4 mt-20">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.jeff.lite&hl=ko"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/googleplay.png"
+              alt="Get it on Google Play"
+              className="w-[180px] hover:opacity-80 transition"
+            />
+          </a>
+
+          <a
+            href="https://apps.apple.com/us/app/%EC%B0%8D%EA%B3%A0%EB%A8%B8%EB%8B%88-%EC%82%AC%EC%A7%84%EC%B0%8D%EA%B3%A0-%EB%8F%88%EB%B2%84%EB%8A%94-%EB%A6%AC%EC%9B%8C%EB%93%9C-%EC%95%B1%ED%85%8C%ED%81%AC-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%95%B1/id6740126637" // ✅ 앱스토어 실제 링크로 교체
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/appstore.png"
+              alt="Download on the App Store"
+              className="w-[180px] hover:opacity-80 transition"
+            />
+          </a>
+        </div>
+      </section>
       {/* Footer 여백 */}
       <div className="h-32" />
     </div>

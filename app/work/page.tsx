@@ -11,8 +11,8 @@ export default function Work() {
             className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl
                    font-light leading-[1.15] tracking-[-0.01em]"
           >
-            Hello, I’m <span className="font-semibold text-black">Joosung</span>
-            .
+            Hello, I’m{" "}
+            <span className="font-semibold text-black">Joosung </span>.
           </h1>
 
           <h2
@@ -62,10 +62,10 @@ export default function Work() {
               />
               <div className="absolute inset-0 flex flex-col justify-end p-4">
                 <h3 className="text-white text-sm sm:text-base font-semibold">
-                  Snap Cash - Instant NFT Minting Camera Solution
+                  Snapcash - Instant NFT Minting Camera Solution
                 </h3>
                 <p className="text-white text-xs sm:text-sm mt-1">
-                  / 2023.01 – 2023.03
+                  / 2024.09 – 2025.01
                 </p>
               </div>
             </div>
