@@ -21,14 +21,15 @@ const PROJECTS: Project[] = [
     period: "2023.01 – 2023.03",
     gallery: [
       { type: "image", src: "/fun1.jpg" }, // 커버
-      { type: "image", src: "/images/af1_detail1.jpg" },
-      { type: "image", src: "/images/af1_detail2.jpg" },
+      { type: "image", src: "/af1_1.jpg" },
+      { type: "image", src: "/af1_2.jpg" },
+      { type: "image", src: "/af1_3.jpg" },
       // { type: "video", src: "/videos/af1_process.mp4", poster: "/images/af1_poster.jpg" },
     ],
   },
   {
-    title: "Airforce1 Graphic Album Project",
-    period: "2023.01 – 2023.03",
+    title: "Bulnae Pocha – Korean Street Bar & Grill",
+    period: "2020.04 – 2020.07",
     coverIndex: 0,
     gallery: [
       // 두번째 프로젝트: 비디오를 커버로 사용
@@ -37,8 +38,15 @@ const PROJECTS: Project[] = [
         src: "/project2.mp4",
         poster: "/images/project2_poster.jpg",
       }, // 커버
-      { type: "image", src: "/images/p2_still1.jpg" },
-      { type: "image", src: "/images/p2_still2.jpg" },
+      { type: "image", src: "/Bulnaepocha1.jpg" },
+      { type: "image", src: "/Bulnaepocha2.jpg" },
+      { type: "image", src: "/Bulnaepocha3.jpg" },
+      { type: "image", src: "/Bulnaepocha4.jpg" },
+      { type: "image", src: "/Bulnaepocha5.jpg" },
+      { type: "image", src: "/Bulnaepocha6.jpg" },
+      { type: "image", src: "/Bulnaepocha7.jpg" },
+      { type: "image", src: "/Bulnaepocha8.jpg" },
+      { type: "image", src: "/Bulnaepocha9.jpg" },
     ],
   },
 ];
