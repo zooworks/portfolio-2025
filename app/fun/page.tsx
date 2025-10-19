@@ -3,28 +3,26 @@ import { useEffect, useRef, useState } from "react";
 
 /* ========== 타입 ========== */
 type Media =
-  | { type: "image"; src: string }
-  | { type: "video"; src: string; poster?: string };
+  | { type: "image"; src: string; objectPosition?: string }
+  | { type: "video"; src: string; poster?: string; objectPosition?: string };
 
 type Project = {
   title: string;
   period?: string;
-  gallery: Media[]; // 이 프로젝트의 관련 미디어(이미지/영상)들
-  coverIndex?: number; // 카드에 보일 커버 미디어 인덱스 (없으면 0)
+  gallery: Media[];
+  coverIndex?: number;
 };
 
-/* ========== 데이터 (예시) ========== */
-/* 필요에 맞게 gallery 배열만 추가/수정하면 라이트박스가 그 안에서만 슬라이드돼 */
+/* ========== 데이터 (수정 버전) ========== */
 const PROJECTS: Project[] = [
   {
     title: "Airforce1 Graphic Album Project",
     period: "2023.01 – 2023.03",
     gallery: [
-      { type: "image", src: "/fun1.jpg" }, // 커버
+      { type: "image", src: "/fun1.jpg" },
       { type: "image", src: "/af1_1.jpg" },
       { type: "image", src: "/af1_2.jpg" },
       { type: "image", src: "/af1_3.jpg" },
-      // { type: "video", src: "/videos/af1_process.mp4", poster: "/images/af1_poster.jpg" },
     ],
   },
   {
@@ -32,12 +30,11 @@ const PROJECTS: Project[] = [
     period: "2020.04 – 2020.07",
     coverIndex: 0,
     gallery: [
-      // 두번째 프로젝트: 비디오를 커버로 사용
       {
         type: "video",
         src: "/project2.mp4",
         poster: "/images/project2_poster.jpg",
-      }, // 커버
+      },
       { type: "image", src: "/Bulnaepocha1.jpg" },
       { type: "image", src: "/Bulnaepocha2.jpg" },
       { type: "image", src: "/Bulnaepocha3.jpg" },
@@ -49,6 +46,15 @@ const PROJECTS: Project[] = [
       { type: "image", src: "/Bulnaepocha9.jpg" },
     ],
   },
+  {
+    title: "Hanbando Package Project",
+    period: "2021.04 – 2021.05",
+    gallery: [
+      { type: "image", src: "/hanbando1_1.jpg", objectPosition: "30% center" }, // ✅ 오른쪽으로 이동
+      { type: "image", src: "/hanbando1_2.jpg" },
+      { type: "image", src: "/hanbando1_3.jpg" },
+    ],
+  },
 ];
 
 /* ========== 페이지 컴포넌트 ========== */
@@ -57,7 +63,6 @@ export default function Fun() {
   const [projectIndex, setProjectIndex] = useState(0);
   const [mediaIndex, setMediaIndex] = useState(0);
 
-  // 라이트박스 열릴 때 배경 스크롤 잠금
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
@@ -99,7 +104,6 @@ export default function Fun() {
   );
 }
 
-/* ========== 카드: 이미지/비디오 커버 공용 ========== */
 function ProjectCard({
   project,
   onOpen,
@@ -110,15 +114,11 @@ function ProjectCard({
   const cover = project.gallery[project.coverIndex ?? 0];
   const videoRef = useRef<HTMLVideoElement | null>(null);
 
-  // 화면 벗어나면 자동 일시정지 (비디오일 때)
   useEffect(() => {
     if (cover.type !== "video" || !videoRef.current) return;
     const el = videoRef.current;
     const io = new IntersectionObserver(
-      (entries) =>
-        entries.forEach((e) => {
-          if (!e.isIntersecting) el.pause();
-        }),
+      (entries) => entries.forEach((e) => !e.isIntersecting && el.pause()),
       { threshold: 0.1 }
     );
     io.observe(el);
@@ -129,7 +129,8 @@ function ProjectCard({
     <button
       type="button"
       onClick={onOpen}
-      className="group relative overflow-hidden rounded-2xl focus:outline-none bg-black"
+      className="group relative overflow-hidden rounded-2xl focus:outline-none bg-black
+                 aspect-square  /* ✅ 모든 카드 정사각형으로 통일 */"
       aria-label={`Open ${project.title}`}
     >
       {/* 커버 미디어 */}
@@ -137,17 +138,15 @@ function ProjectCard({
         <img
           src={cover.src}
           alt={project.title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+          className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
+          style={{ objectPosition: cover.objectPosition ?? "center" }} // ✅ 추가
           draggable={false}
         />
       ) : (
         <video
           ref={videoRef}
-          className="
-            w-full h-full object-cover
-            object-[46%_center]   /* 살짝 오른쪽 포커스 */
-            transition-transform duration-300 group-hover:scale-[1.03]
-          "
+          className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
+          style={{ objectPosition: cover.objectPosition ?? "center" }} // ✅ 추가
           src={cover.src}
           poster={cover.poster}
           muted
@@ -158,15 +157,8 @@ function ProjectCard({
         />
       )}
 
-      {/* 하단 그라디언트 + 왼쪽 정렬 텍스트 */}
-      <div
-        className="
-          pointer-events-none absolute inset-x-0 bottom-0
-          bg-gradient-to-t from-black/80 via-black/50 to-transparent
-          px-5 py-4 text-left
-          opacity-95 group-hover:opacity-100 transition-opacity
-        "
-      >
+      {/* 하단 그라디언트 + 텍스트 */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-5 py-4 text-left opacity-95 group-hover:opacity-100 transition-opacity">
         <p className="text-white text-base md:text-lg font-semibold drop-shadow-sm">
           {project.title}
         </p>
@@ -180,7 +172,7 @@ function ProjectCard({
   );
 }
 
-/* ========== 라이트박스: 프로젝트 안의 갤러리만 슬라이드 ========== */
+/* ========== 라이트박스 수정 버전 ========== */
 function Lightbox({
   project,
   mediaIndex,
@@ -194,11 +186,9 @@ function Lightbox({
 }) {
   const startX = useRef<number | null>(null);
   const total = project.gallery.length;
-
   const prev = () => setMediaIndex((mediaIndex + total - 1) % total);
   const next = () => setMediaIndex((mediaIndex + 1) % total);
 
-  // 키보드 이동/닫기
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -218,7 +208,6 @@ function Lightbox({
       className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center"
       onClick={onClose}
     >
-      {/* 닫기 / 이전 / 다음 */}
       <button
         onClick={onClose}
         className="absolute top-4 right-4 text-white/90 hover:text-white text-2xl px-3 py-1"
@@ -247,9 +236,9 @@ function Lightbox({
         ›
       </button>
 
-      {/* 콘텐츠 */}
+      {/* ✅ 수정된 콘텐츠 박스 */}
       <div
-        className="flex flex-col items-start gap-3 text-left"
+        className="w-[92vw] h-[86vh] flex items-center justify-center"
         onClick={(e) => e.stopPropagation()}
         onTouchStart={(e) => {
           startX.current = e.touches[0].clientX;
@@ -270,12 +259,12 @@ function Lightbox({
           <img
             src={media.src}
             alt={project.title}
-            className="block max-w-[92vw] max-h-[86vh] object-contain rounded-lg shadow-2xl"
+            className="w-full h-full object-contain rounded-lg shadow-2xl"
             draggable={false}
           />
         ) : (
           <video
-            className="block max-w-[92vw] max-h-[86vh] object-contain rounded-lg shadow-2xl bg-black"
+            className="w-full h-full object-contain rounded-lg shadow-2xl bg-black"
             src={media.src}
             poster={media.poster}
             controls
@@ -285,16 +274,6 @@ function Lightbox({
             loop
           />
         )}
-
-        {/* 하단 정보 (왼쪽 정렬) */}
-        <div className="pl-1">
-          <p className="text-white text-sm md:text-base font-semibold">
-            {project.title}
-          </p>
-          {project.period && (
-            <p className="text-white/80 text-xs mt-0.5">/ {project.period}</p>
-          )}
-        </div>
       </div>
     </div>
   );
