@@ -46,9 +46,10 @@ export default function Work() {
         </p>
       </div>
 
+      {/* ====== 프로젝트 카드 섹션 ====== */}
       <div className="px-6 py-10 max-w-4xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* 카드 2 - 동일한 형식으로 수정 */}
+          {/* 카드 2 */}
           <Link
             href="/work/project2"
             className="group block rounded-[20px] overflow-hidden shadow-md"
@@ -70,6 +71,7 @@ export default function Work() {
               </div>
             </div>
           </Link>
+
           {/* 카드 1 */}
           <Link
             href="/work/project1"
@@ -88,6 +90,52 @@ export default function Work() {
                 </h3>
                 <p className="text-white text-xs sm:text-sm mt-1">
                   / 2023.05 – 2023.07
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          {/* ✅ 카드 3 추가 (Codee) */}
+          <Link
+            href="/work/project3"
+            className="group block rounded-[20px] overflow-hidden shadow-md"
+          >
+            <div className="relative w-full aspect-[4/4]">
+              <Image
+                src="/project3.png"
+                alt="Thesis – Human with AI"
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105 object-[60%_center]"
+              />
+              <div className="absolute inset-0 flex flex-col justify-end p-4">
+                <h3 className="text-white text-sm sm:text-base font-semibold leading-tight">
+                  Thesis – Human with AI/work in progress
+                </h3>
+                <p className="text-white text-xs sm:text-sm mt-1">
+                  / 2024.09 – 2025.08
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          {/* ✅ 카드 3 추가 (Codee) */}
+          <Link
+            href="/work/project4"
+            className="group block rounded-[20px] overflow-hidden shadow-md"
+          >
+            <div className="relative w-full aspect-[4/4]">
+              <Image
+                src="/project4.png"
+                alt="Thesis – Human with AI"
+                fill
+                className="object-cover transition-transform duration-300 group-hover:scale-105 object-[60%_center]"
+              />
+              <div className="absolute inset-0 flex flex-col justify-end p-4">
+                <h3 className="text-white text-sm sm:text-base font-semibold leading-tight">
+                  Thesis – Human with AI/work in progress
+                </h3>
+                <p className="text-white text-xs sm:text-sm mt-1">
+                  / 2024.09 – 2025.08
                 </p>
               </div>
             </div>

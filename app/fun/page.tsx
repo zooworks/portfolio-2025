@@ -34,6 +34,7 @@ const PROJECTS: Project[] = [
         type: "video",
         src: "/project2.mp4",
         poster: "/images/project2_poster.jpg",
+        objectPosition: "45% center", // ✅ 카드 커버(영상) 포커스 우측으로 이동
       },
       { type: "image", src: "/Bulnaepocha1.jpg" },
       { type: "image", src: "/Bulnaepocha2.jpg" },
@@ -72,6 +73,19 @@ const PROJECTS: Project[] = [
       { type: "image", src: "/codeegraphic5.png" },
       { type: "image", src: "/codeesketch1.png" },
       { type: "image", src: "/codeesketch2.png" },
+    ],
+  },
+  {
+    title: "EOE Branding Project",
+    period: "2020.12 – 2021.04",
+    gallery: [
+      { type: "image", src: "/eoe-01.jpg" },
+      { type: "image", src: "/eoe-02.jpg" },
+      { type: "image", src: "/eoe-03.jpg" },
+      { type: "image", src: "/eoe-04.jpg" },
+      { type: "image", src: "/eoe-05.jpg" },
+      { type: "image", src: "/eoe-06.jpg" },
+      { type: "image", src: "/eoe-07.jpg" },
     ],
   },
 ];
