@@ -13,7 +13,7 @@ type Project = {
   coverIndex?: number;
 };
 
-/* ========== 데이터 (수정 버전) ========== */
+/* ========== 데이터 ========== */
 const PROJECTS: Project[] = [
   {
     title: "Airforce1 Graphic Album Project",
@@ -50,9 +50,28 @@ const PROJECTS: Project[] = [
     title: "Hanbando Package Project",
     period: "2021.04 – 2021.05",
     gallery: [
-      { type: "image", src: "/hanbando1_1.jpg", objectPosition: "30% center" }, // ✅ 오른쪽으로 이동
+      { type: "image", src: "/hanbando1_1.jpg", objectPosition: "30% center" },
       { type: "image", src: "/hanbando1_2.jpg" },
       { type: "image", src: "/hanbando1_3.jpg" },
+    ],
+  },
+  {
+    title: "Codee",
+    period: "2024.02-2024.04",
+    coverIndex: 0,
+    gallery: [
+      {
+        type: "video",
+        src: "/codee.mp4",
+        poster: "/images/project2_poster.jpg",
+      },
+      { type: "image", src: "/codeegraphic1.png" },
+      { type: "image", src: "/codeegraphic2.png" },
+      { type: "image", src: "/codeegraphic3.png" },
+      { type: "image", src: "/codeegraphic4.png" },
+      { type: "image", src: "/codeegraphic5.png" },
+      { type: "image", src: "/codeesketch1.png" },
+      { type: "image", src: "/codeesketch2.png" },
     ],
   },
 ];
@@ -104,6 +123,7 @@ export default function Fun() {
   );
 }
 
+/* ========== 카드 ========== */
 function ProjectCard({
   project,
   onOpen,
@@ -129,24 +149,23 @@ function ProjectCard({
     <button
       type="button"
       onClick={onOpen}
-      className="group relative overflow-hidden rounded-2xl focus:outline-none bg-black
-                 aspect-square  /* ✅ 모든 카드 정사각형으로 통일 */"
+      className="group relative overflow-hidden rounded-2xl focus:outline-none bg-black aspect-square will-change-transform"
       aria-label={`Open ${project.title}`}
     >
-      {/* 커버 미디어 */}
+      {/* 커버 미디어 (baseline gap 제거 + 프레임 정확히 채우기) */}
       {cover.type === "image" ? (
         <img
           src={cover.src}
           alt={project.title}
-          className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
-          style={{ objectPosition: cover.objectPosition ?? "center" }} // ✅ 추가
+          className="absolute inset-0 block w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
+          style={{ objectPosition: cover.objectPosition ?? "center" }}
           draggable={false}
         />
       ) : (
         <video
           ref={videoRef}
-          className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.03]"
-          style={{ objectPosition: cover.objectPosition ?? "center" }} // ✅ 추가
+          className="absolute inset-0 block w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-[1.03] outline-none"
+          style={{ objectPosition: cover.objectPosition ?? "center" }}
           src={cover.src}
           poster={cover.poster}
           muted
@@ -172,7 +191,7 @@ function ProjectCard({
   );
 }
 
-/* ========== 라이트박스 수정 버전 ========== */
+/* ========== 라이트박스 ========== */
 function Lightbox({
   project,
   mediaIndex,
@@ -197,7 +216,7 @@ function Lightbox({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [mediaIndex, total]);
+  }, [mediaIndex, total, onClose]);
 
   const media = project.gallery[mediaIndex];
 
@@ -208,6 +227,7 @@ function Lightbox({
       className="fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center"
       onClick={onClose}
     >
+      {/* Controls */}
       <button
         onClick={onClose}
         className="absolute top-4 right-4 text-white/90 hover:text-white text-2xl px-3 py-1"
@@ -236,9 +256,9 @@ function Lightbox({
         ›
       </button>
 
-      {/* ✅ 수정된 콘텐츠 박스 */}
+      {/* 미디어 래퍼: 둥근모서리 + overflow-hidden + 배경 통일 */}
       <div
-        className="w-[92vw] h-[86vh] flex items-center justify-center"
+        className="relative w-[92vw] h-[86vh] flex items-center justify-center rounded-2xl overflow-hidden bg-black"
         onClick={(e) => e.stopPropagation()}
         onTouchStart={(e) => {
           startX.current = e.touches[0].clientX;
@@ -259,12 +279,12 @@ function Lightbox({
           <img
             src={media.src}
             alt={project.title}
-            className="w-full h-full object-contain rounded-lg shadow-2xl"
+            className="block max-w-full max-h-full w-auto h-auto select-none"
             draggable={false}
           />
         ) : (
           <video
-            className="w-full h-full object-contain rounded-lg shadow-2xl bg-black"
+            className="block max-w-full max-h-full w-auto h-auto outline-none"
             src={media.src}
             poster={media.poster}
             controls
