@@ -529,7 +529,7 @@ export default function Project1Page() {
                 <section className="mt-6 md:mt-10">
                   <div className="mb-3 md:mb-6 text-left">
                     <h3 className="text-xl font-bold text-purple-600">
-                      Yeon-hee’s Needs Point
+                      Yeon-hee’s Needs Point-1
                     </h3>
                     <p className="text-sm text-gray-600 mt-1">
                       One-Touch Review — Earn more by writing detailed reviews.
@@ -555,7 +555,80 @@ export default function Project1Page() {
                     />
                   </div>
 
-                  <p className="text-base text-gray-400 mt-3">
+                  <div className="mb-3 md:mb-6 text-left">
+                    <h3 className="text-xl font-bold text-purple-600">
+                      Yeon-hee’s Needs Point-2
+                    </h3>
+                    <p className="text-sm text-gray-600 mt-1">
+                      Review visualization
+                    </p>
+                  </div>
+
+                  <div className="md:hidden mt-4 flex justify-center">
+                    <div className="w-full max-w-[600px] mx-auto rounded-xl overflow-hidden">
+                      <img
+                        src="/needs2-2.png"
+                        alt="needs2-2"
+                        className="w-[68%] mx-auto h-auto object-contain rounded-xl"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="hidden md:block mt-4">
+                    <img
+                      src="/needs2-1.png"
+                      alt="Yeon-hee’s Needs Point (desktop combined)"
+                      className="w-full max-w-[1000px] rounded-xl"
+                    />
+                  </div>
+                </section>
+
+                {/* 9. Outcome */}
+                <section className="mt-16">
+                  <div className="relative max-w-3xl mx-auto rounded-2xl border border-purple-200/60 bg-white/80 backdrop-blur p-6 md:p-8 shadow-sm">
+                    {/* 상단 라벨 */}
+                    <div className="mb-4 inline-flex items-center gap-2">
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-purple-100">
+                        {/* 체크 아이콘 (SVG) */}
+                        <svg
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          className="h-5 w-5 text-purple-600"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M20 6 9 17l-5-5" />
+                        </svg>
+                      </span>
+                      <h3 className="text-lg md:text-xl font-bold text-purple-700 tracking-tight">
+                        Lesson Learned
+                      </h3>
+                    </div>
+
+                    {/* 본문 */}
+                    <div className="w-full max-w-none mx-auto space-y-3 text-gray-700 leading-relaxed">
+                      <p>
+                        - Introducing personalized features such as{" "}
+                        <span className="font-semibold">One-Touch Review</span>{" "}
+                        and <span className="font-semibold">Meal Profile</span>{" "}
+                        effectively increased user engagement and satisfaction.
+                      </p>
+                      <p>
+                        - Users appreciated convenience and personalization,
+                        highlighting that tailored experiences can motivate
+                        active participation.
+                      </p>
+                    </div>
+
+                    {/* 살짝 강조되는 보텀 보더 */}
+                    <div className="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-gradient-to-r from-transparent via-purple-400/60 to-transparent" />
+                  </div>
+
+                  <p className="text-base text-gray-400 mt-20 ">
                     *All product design screens are based on survey insights and
                     persona goals.
                   </p>

@@ -1,21 +1,534 @@
-export default function Project3() {
+// Charts
+import SurveyChartReviewInsight1 from "@/components/SurveyChartReviewInsight1";
+import SurveyChartFactor from "@/components/SurveyChartFactor";
+import SurveyChartMenuDifficulty from "@/components/SurveyChartMenuDifficulty";
+import Results from "@/components/Results";
+
+// Persona
+import MobilePersonaCards from "@/components/MobilePersonaCards";
+
+// replace old IconSquares
+const IconSquares = ({
+  size = 16,
+  gap = 6,
+}: {
+  size?: number;
+  gap?: number;
+}) => (
+  <div
+    className="inline-grid align-middle"
+    style={{
+      gridTemplateColumns: `repeat(4, ${size}px)`,
+      gap: `${gap}px`,
+      lineHeight: 0, // 텍스트 라인헬스 영향 제거
+    }}
+    aria-hidden
+  >
+    {Array.from({ length: 4 }).map((_, i) => (
+      <span
+        key={i}
+        className="block shrink-0"
+        style={{
+          width: size,
+          height: size,
+          background: "#000",
+          borderRadius: 2,
+        }}
+      />
+    ))}
+  </div>
+);
+
+const IconDot = () => (
+  <div className="flex justify-center items-center leading-none" aria-hidden>
+    <span className="inline-block w-3 h-3 md:w-4 md:h-4 bg-black rounded-full" />
+  </div>
+);
+
+export default function Project1Page() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center px-6">
-      <h1 className="text-3xl md:text-4xl font-semibold mb-4">
-        🚧 Work in Progress
+    <div className="px-6 py-10 max-w-6xl mx-auto">
+      <h1 className="text-4xl font-bold mb-6">
+        Codee - Codee – Coding Test Practice App for Job Seekers
       </h1>
-      <p className="text-gray-500 text-base md:text-lg">
-        This project page is currently under construction.
-        <br />
-        Please check back soon!
+
+      <p className="text-lg text-gray-700 mb-4">
+        Research Insights: NFT Awareness and Potential
       </p>
 
-      <a
-        href="/work"
-        className="mt-8 text-sm text-blue-600 hover:text-blue-800 underline"
-      >
-        ← Back to Works
-      </a>
+      <section className="bg-gray-100 rounded-lg p-6 mt-6 mb-14 md:mt-8 md:mb-24">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+          <div className="md:col-span-3">
+            <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
+              Role
+            </h3>
+            <p className="text-base text-gray-800">Product Designer</p>
+          </div>
+
+          <div className="md:col-span-3">
+            <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
+              Timeline
+            </h3>
+            <p className="text-base text-gray-800">Feb – Apr 2024 (2 Months)</p>
+          </div>
+
+          <div className="md:col-span-3">
+            <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
+              Team
+            </h3>
+            <p className="text-base text-gray-800">
+              1 Product Designer <br />1 backend Dev <br />
+              1 Product Manager <br />1 Frontend Dev
+            </p>
+          </div>
+
+          <div className="md:col-span-3">
+            <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
+              Tools
+            </h3>
+            <p className="text-base text-gray-800">
+              Figma <br />
+              Adobe Illustrator <br />
+              Adobe Photoshop <br />
+              Procreate <br />
+            </p>
+          </div>
+
+          {/* Contribution: 제목 + 본문 같은 셀에 넣기 */}
+          <div className="md:col-span-12 flex flex-col md:grid md:grid-cols-12 md:gap-8">
+            <div className="md:col-span-3">
+              <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
+                Contribution
+              </h3>
+            </div>
+            <div className="text-base text-gray-800 md:col-span-9 max-w-none">
+              <p>
+                As a product design lead, I successfully led the design of a
+                B2C-focused fintech/health app into a user-friendly platform by:
+              </p>
+              <ul className="list-disc list-inside mt-3 space-y-2">
+                <li>
+                  Managed the design domain from native app (Android, iOS) to
+                  responsive web.
+                </li>
+                <li>
+                  <span className="font-semibold">Led communication</span> with
+                  developers based on component guide documentation.
+                </li>
+                <li>
+                  <span className="font-semibold">
+                    Creating a new design system
+                  </span>{" "}
+                  that improved usability.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-16 ">
+        <h2 className="text-2xl font-bold mb-4">1. Project Background</h2>
+        <p className="text-base text-gray-700 mb-20 text-pretty">
+          The NFT market has been rapidly expanding, but mainstream adoption
+          remains limited due to high entry barriers. For general users,
+          technical terminology such as{" "}
+          <span className="font-semibold">Decentralization</span> and
+          <span className="font-semibold"> Smart contracts</span> is difficult
+          to understand. On top of that, the NFT minting process is often
+          complex and confusing, with unfriendly user experiences. As a result,
+          the widespread adoption of NFTs has been significantly delayed.
+        </p>
+
+        {/* 두 원: 모바일은 세로 겹침, 데스크탑은 가로 겹침 */}
+        <div className="mt-10 flex flex-col items-center md:flex-row md:justify-center md:gap-8">
+          {/* Circle 1 */}
+          <div
+            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
+                  flex flex-col items-center justify-center text-center bg-white px-4 z-20"
+          >
+            <h3 className="font-bold text-lg mb-1">Terminology</h3>
+            <p className="text-sm text-gray-500 leading-tight text-pretty">
+              Hard-to-grasp concepts like{" "}
+              <span className="font-semibold">Decentralization</span> and
+              <span className="font-semibold"> Smart contracts</span>
+            </p>
+          </div>
+
+          {/* Circle 2 (모바일에서도 살짝 겹치기) */}
+          <div
+            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
+                  flex flex-col items-center justify-center text-center px-6
+                  -mt-10 md:mt-0 md:-ml-12 bg-white z-10"
+          >
+            <h3 className="font-bold text-lg mb-1">Usability</h3>
+            <p className="text-sm text-gray-500 leading-tight">
+              Complex and confusing minting process & UX
+            </p>
+          </div>
+        </div>
+
+        {/* 화살표 + 결과 */}
+        <div className="flex justify-center my-6">
+          <svg className="w-5 h-5 text-sky-500" viewBox="0 0 24 24" fill="none">
+            <path
+              d="M12 4v14m0 0l-5-5m5 5l5-5"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+        <div className="rounded-2xl bg-[#6736FF] text-white text-center px-6 py-4 font-semibold shadow-sm max-w-3xl mx-auto mb-24">
+          Delayed mass adoption of NFTs
+        </div>
+      </section>
+
+      {/* 2. Desk Research */}
+      <section className="mt-16 mb-24">
+        <h2 className="text-2xl font-bold mb-6">2. Desk Research</h2>
+        <p className="text-base text-gray-700 mb-8 text-pretty">
+          20s and 30s users are highly accustomed to taking and sharing photos,
+          and they naturally engage with photo-verification-based missions.
+          However, the concepts of NFTs and blockchain still feel unfamiliar and
+          complicated to many users. Therefore, instead of technical jargon, it
+          is more effective to convey the intuitive experience of “my photo is
+          securely recorded and remains as my ownership.”
+        </p>
+      </section>
+
+      {/* 3. User Needs / Design goal */}
+      <h2 className="text-2xl font-bold mb-6">3. User Needs / Design goal</h2>
+      <p className="text-base text-gray-700 mb-8 text-pretty">
+        Many reward apps rely on advertisements or repetitive behaviors to
+        accumulate points, which lowers user motivation and fails to sustain
+        long-term engagement. In contrast, people in their 20s and 30s are
+        highly accustomed to taking and sharing photos. NFTCAM is designed to
+        provide an intuitive and enjoyable reward experience based on photo
+        verification, making the process more engaging and straightforward.
+      </p>
+
+      {/* Pinpoint / Solution cards */}
+      <section className="mt-12 overflow-hidden">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 items-stretch">
+          {[
+            {
+              title: "Pinpoint 01",
+              body: "Hard to feel immediate value because a large number of points is required before rewards.",
+              solutionTitle: "Solution 01",
+              solutionBody:
+                "Provide instant rewards even with small point amounts (e.g., low-value gift cards).",
+              // + 아이콘은 폰트 대신 SVG(고정폭) 권장
+              icon: (
+                <img
+                  src="/Pinpoint 01.png" // public 폴더 기준 경로
+                  alt="Solution 01 icon"
+                  className="w-12 h-12 object-contain"
+                />
+              ),
+            },
+            {
+              title: "Pinpoint 02",
+              body: "Monotonous participation methods (step counter, ads).",
+              solutionTitle: "Solution 02",
+              solutionBody:
+                "Offer diverse missions such as location-based tasks, challenges, and shopping verification.",
+              icon: (
+                <img
+                  src="/Pinpoint 02.png"
+                  alt="Solution 02 icon"
+                  className="w-12 h-12 object-contain"
+                />
+              ),
+            },
+            {
+              title: "Pinpoint 03",
+              body: "Non-intuitive navigation and blockchain-heavy terms create high cognitive load and reduce confidence.",
+              solutionTitle: "Solution 03",
+              solutionBody:
+                "Simplify the verify-and-earn UX; present NFTs in an experience-focused way rather than technical terms.",
+              // ✅ 여기서 IconSquares 실제 사용
+              icon: (
+                <img
+                  src="/Pinpoint 03.png"
+                  alt="Solution 03 icon"
+                  className="w-12 h-12 object-contain"
+                />
+              ),
+            },
+            {
+              title: "Pinpoint 04",
+              body: "Users disengage after short-term use because interactions feel repetitive.",
+              solutionTitle: "Solution 04",
+              solutionBody:
+                "Enhancing immediate rewards to maximize short-term engagement motivation.",
+              // ✅ 점 아이콘 사용
+              icon: (
+                <img
+                  src="/Pinpoint 04.png"
+                  alt="Solution 04 icon"
+                  className="w-12 h-12 object-contain"
+                />
+              ),
+            },
+          ].map((item, idx) => (
+            <div key={idx} className="flex flex-col items-center w-full">
+              {/* Pinpoint 카드 */}
+              <div className="rounded-2xl bg-white border border-gray-200 p-6 text-center flex flex-col justify-start min-h-[200px]">
+                <p className="text-sm font-semibold text-gray-500 mb-2">
+                  {item.title}
+                </p>
+                <p className="text-gray-800 text-pretty break-words">
+                  {item.body}
+                </p>
+              </div>
+
+              {/* 삼각형 */}
+              <div
+                aria-hidden
+                className="my-3 w-0 h-0 border-l-[12px] border-r-[12px] border-l-transparent border-r-transparent border-t-[16px] border-t-sky-500"
+              />
+
+              {/* Solution 카드 */}
+              <div className="rounded-2xl bg-white border border-gray-200 p-6 text-center flex flex-col justify-start h-[260px]">
+                <p className="text-sm font-semibold text-sky-600 mb-3">
+                  {item.solutionTitle}
+                </p>
+                {/* 아이콘 컨테이너: 텍스트 영향 제거 */}
+                <div className="mb-3 flex justify-center items-center flex-none leading-none text-[0]">
+                  {item.icon}
+                </div>
+                <p className="text-gray-800 text-pretty break-words">
+                  {item.solutionBody}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 삼각형 화살표 */}
+      <div
+        aria-hidden
+        className="my-5 mx-auto w-0 h-0 
+             border-l-[14px] border-r-[14px] 
+             border-l-transparent border-r-transparent 
+             border-t-[20px] border-t-sky-500"
+      />
+
+      {/* Service Goal banner */}
+      <section className="mt-10 md:mt-6">
+        <div className="rounded-2xl border border-indigo-100 bg-indigo-50/40 px-4 py-14 md:px-8 md:py-7">
+          <p className="text-center text-sm font-semibold text-sky-600">
+            Service Goal
+          </p>
+          <p className="mt-2 text-center text-lg md:text-xl font-semibold text-gray-900">
+            Securely record photo verification as NFTs and boost motivation with
+            instant rewards.
+          </p>
+        </div>
+      </section>
+
+      {/* 4. IA & Wireframe */}
+      <section className="mt-20">
+        <h2 className="text-2xl font-bold mb-4">4. IA & Wireframe</h2>
+        <p className="text-base text-gray-700 mb-20 text-pretty">
+          Designed the IA to create an intuitive and efficient flow that guides
+          users seamlessly from photo verification to point accumulation and
+          reward redemption.
+          <div className="flex justify-center">
+            <img
+              src="/IAsnapcash.png"
+              alt="Information Architecture Diagram"
+              className="max-w-full"
+            />
+          </div>
+          <p className="text-sm text-gray-400 text-center mt-2">
+            *IA & Wireframe for Snapcash app
+          </p>
+        </p>
+      </section>
+
+      {/* 5. Why NFTCAM? */}
+      <section className="mt-20">
+        <h2 className="text-2xl font-bold mb-4">5. Why NFTCAM?</h2>
+
+        {/* Solution */}
+        {/* 두 원: 모바일은 세로로 겹침, 데스크탑은 가로 배치 */}
+        <div className="mt-10 flex flex-col items-center md:flex-row md:justify-center md:gap-8">
+          {/* Circle 1 */}
+          <div
+            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
+      flex flex-col items-center justify-center text-center bg-white px-4 z-30"
+          >
+            <h3 className="font-bold text-lg mb-1">Simplicity</h3>
+            <p className="text-sm text-gray-500 leading-tight">
+              Minimize steps, make minting as easy as a camera click.
+            </p>
+          </div>
+
+          {/* Circle 2 */}
+          <div
+            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
+      flex flex-col items-center justify-center text-center px-6
+      -mt-10 md:mt-0 md:-ml-12 bg-white z-20"
+          >
+            <h3 className="font-bold text-lg mb-1">Familiarity</h3>
+            <p className="text-sm text-gray-500 leading-tight">
+              Use patterns users already know (camera UI, reward systems).
+            </p>
+          </div>
+
+          {/* Circle 3 */}
+          <div
+            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
+      flex flex-col items-center justify-center text-center px-6
+      -mt-10 md:mt-0 md:-ml-12 bg-white z-10"
+          >
+            <h3 className="font-bold text-lg mb-1">Engagement</h3>
+            <p className="text-sm text-gray-500 leading-tight">
+              Add gamification and social feedback loops to keep users active.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mt-8">
+        <h2 className="text-2xl font-bold mb-4">6. Design System</h2>
+        <p className="text-base text-gray-600 mb-4">
+          The foundation of the Snapcash Design System ensures consistency
+          across layout, spacing, and radius. These guidelines help maintain a
+          unified look and feel throughout the product.
+        </p>
+
+        {/* ✅ 데스크탑 전용 이미지 */}
+        <div className="hidden md:flex justify-center">
+          <img
+            src="/SnapcashDesignSystem.jpg"
+            alt="Snapcash Design System"
+            className="max-w-full"
+          />
+        </div>
+
+        {/* ✅ 모바일 전용 이미지 (두 장 세로 배치) */}
+        <div className="flex flex-col items-center gap-4 md:hidden">
+          <img
+            src="/SnapcashDesignSystemMobile1-1.jpg.jpg"
+            alt="Snapcash Design System Mobile Part 1"
+            className="w-full max-w-sm"
+          />
+          <img
+            src="/SnapcashDesignSystemMobile1-2.jpg.jpg"
+            alt="Snapcash Design System Mobile Part 2"
+            className="w-full max-w-sm"
+          />
+        </div>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold mb-3">7. Main UI</h2>
+
+        <p className="text-base text-gray-600 mb-6 leading-relaxed">
+          The main UI was designed to allow users to easily view their reward
+          status and available missions at a glance, check detailed conditions,
+          and take immediate action. By incorporating map-based navigation and a
+          camera verification screen, the location and photo-based participation
+          process was simplified. Compared to conventional reward apps, the
+          3-step flow —
+          <span className="font-medium">
+            {" "}
+            Select Mission → Verify → Earn Reward{" "}
+          </span>
+          — enhances intuitiveness and efficiency.
+        </p>
+
+        {/* ✅ 데스크탑 전용 이미지 */}
+        <div className="hidden md:flex justify-center mt-10">
+          <img
+            src="/snapcashui1.png"
+            alt="Snapcash Main UI"
+            className="max-w-5xl w-full"
+          />
+        </div>
+
+        {/* ✅ 모바일 전용 이미지 (두 장 세로 배치) */}
+        <div className="flex flex-col items-center gap-3 mt-8 md:hidden">
+          <img
+            src="/snapcashui2.png"
+            alt="Snapcash Main UI Mobile"
+            className="w-[85%] max-w-[320px] scale-95"
+          />
+        </div>
+
+        <p className="text-base text-gray-600 mb-6 leading-relaxed mt-20">
+          NFT-related functionalities were limited to the admin interface,
+          whereas the user app expressed it simply as “your photos are securely
+          recorded” — reducing the sense of technical complexity and making the
+          experience more approachable.
+        </p>
+        {/* ✅ 데스크탑 전용 이미지 */}
+        <div className="hidden md:flex justify-center mt-10">
+          <img
+            src="/snapcashui3.png"
+            alt="Snapcash Main UI"
+            className="max-w-5xl w-full"
+          />
+        </div>
+
+        {/* ✅ 모바일 전용 이미지 (두 장 세로 배치) */}
+        <div className="flex flex-col items-center gap-3 mt-8 md:hidden">
+          <img
+            src="/snapcashui4.png"
+            alt="Snapcash Main UI Mobile"
+            className="w-[85%] max-w-[320px]"
+          />
+        </div>
+      </section>
+
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold mb-3">8. Results</h2>
+        <h3>
+          <span className="text-xl font-medium">
+            {" "}
+            Service Journey and Beyond{" "}
+          </span>
+        </h3>
+        <p className="text-base text-gray-600 mb-6 leading-relaxed">
+          After launching the Snapcash app on iOS and Android stores, we
+          validated the flow — from photo verification to point accumulation and
+          reward redemption — with users primarily in their 20s and 30s,
+          confirming the product’s market fit.
+        </p>
+        <Results />
+        <div className="flex justify-center gap-4 mt-20">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.jeff.lite&hl=ko"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/googleplay.png"
+              alt="Get it on Google Play"
+              className="w-[180px] hover:opacity-80 transition"
+            />
+          </a>
+
+          <a
+            href="https://apps.apple.com/us/app/%EC%B0%8D%EA%B3%A0%EB%A8%B8%EB%8B%88-%EC%82%AC%EC%A7%84%EC%B0%8D%EA%B3%A0-%EB%8F%88%EB%B2%84%EB%8A%94-%EB%A6%AC%EC%9B%8C%EB%93%9C-%EC%95%B1%ED%85%8C%ED%81%AC-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%95%B1/id6740126637" // ✅ 앱스토어 실제 링크로 교체
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/appstore.png"
+              alt="Download on the App Store"
+              className="w-[180px] hover:opacity-80 transition"
+            />
+          </a>
+        </div>
+      </section>
+      {/* Footer 여백 */}
+      <div className="h-32" />
     </div>
   );
 }

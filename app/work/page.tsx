@@ -103,7 +103,7 @@ export default function Work() {
             <div className="relative w-full aspect-[4/4]">
               <Image
                 src="/project3.png"
-                alt="Thesis – Human with AI"
+                alt="codee"
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-105 object-[60%_center]"
               />
@@ -132,7 +132,7 @@ export default function Work() {
               />
               <div className="absolute inset-0 flex flex-col justify-end p-4">
                 <h3 className="text-white text-sm sm:text-base font-semibold leading-tight">
-                  Thesis – Human with AI/work in progress
+                  Codee
                 </h3>
                 <p className="text-white text-xs sm:text-sm mt-1">
                   / 2024.09 – 2025.08
