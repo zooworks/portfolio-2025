@@ -11,8 +11,8 @@ export default function Work() {
             className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl
                    font-light leading-[1.15] tracking-[-0.01em]"
           >
-            Hello, I’m{" "}
-            <span className="font-semibold text-black">Joosung </span>.
+            Hello, I’m {/* ✅ 점을 span 안으로 넣어서 'Joosung.' 으로 보이게 */}
+            <span className="font-semibold text-black">Joosung.</span>
           </h1>
 
           <h2
@@ -26,10 +26,12 @@ export default function Work() {
             className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl
                    font-light leading-[1.15] tracking-[-0.01em]"
           >
-            who crafts <span className="font-semibold text-black">clear</span>,{" "}
-            <span className="font-semibold text-black">intuitive</span>,
-            <br className="hidden sm:block" />
-            and{" "}
+            {/* ✅ 공백을 명시적으로 넣어서 mobile에서도 깔끔하게 */}
+            who crafts <span className="font-semibold text-black">
+              clear
+            </span>, <span className="font-semibold text-black">intuitive</span>
+            , <br className="hidden sm:block" />
+            {"and "}
             <span className="font-semibold text-black">
               emotionally resonant
             </span>{" "}
@@ -95,7 +97,7 @@ export default function Work() {
             </div>
           </Link>
 
-          {/* ✅ 카드 3 추가 (Codee) */}
+          {/* 카드 3 */}
           <Link
             href="/work/project3"
             className="group block rounded-[20px] overflow-hidden shadow-md"
@@ -118,7 +120,7 @@ export default function Work() {
             </div>
           </Link>
 
-          {/* ✅ 카드 3 추가 (Codee) */}
+          {/* 카드 4 */}
           <Link
             href="/work/project4"
             className="group block rounded-[20px] overflow-hidden shadow-md"
