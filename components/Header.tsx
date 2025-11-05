@@ -1,15 +1,14 @@
+// components/Header.tsx
 import Link from "next/link";
 
 export default function Header() {
   return (
-    <header className="w-full px-6 flex justify-between items-center border-b">
-      <h1 className="text-xl font-bold">Jun Kim</h1>
-      <nav className="space-x-4">
-        <Link href="/">Home</Link>
-        <Link href="/work">Work</Link>
-        <Link href="/about">About</Link>
-        <Link href="/fun">Fun</Link>
-        <Link href="/contact">Contact</Link>
+    <header className="hidden md:flex w-full px-6 py-4 justify-between items-center border-b">
+      <span className="font-bold text-xl">JOOSUNG KIM</span>
+      <nav className="flex space-x-4 text-sm text-gray-600">
+        <Link href="/work" className="hover:underline">Work</Link>
+        <Link href="/fun" className="hover:underline">Fun</Link>
+        <Link href="/contact" className="hover:underline">Contact</Link>
       </nav>
     </header>
   );

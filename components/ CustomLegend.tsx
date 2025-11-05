@@ -1,11 +1,13 @@
 import { LegendProps } from "recharts";
 
-export default function CustomLegend({
-  payload,
-}: LegendProps & { payload?: any[] }) {
+interface CustomLegendProps extends LegendProps {
+  payload?: any[];
+}
+
+export default function CustomLegend({ payload }: CustomLegendProps) {
   return (
     <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
-      {payload?.map((entry: any, index: number) => (
+      {payload?.map((entry, index) => (
         <li
           key={`item-${index}`}
           style={{
@@ -32,3 +34,4 @@ export default function CustomLegend({
     </ul>
   );
 }
+
