@@ -1,9 +1,9 @@
 // app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
-import Link from "next/link";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
+import MobileHeader from "@/components/MobileHeader";
 
 import { Manrope, Roboto, Geist, Geist_Mono } from "next/font/google";
 
@@ -28,6 +28,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Joosung Kim – Portfolio",
   description: "A thoughtful designer portfolio",
+  icons: {
+    icon: "/favicon.ico", // or your custom png
+  },
 };
 
 export default function RootLayout({
@@ -36,28 +39,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // 필요하면 roboto.variable 제거 가능
     <html
       lang="en"
       className={`${manrope.variable} ${roboto.variable} ${geistSans.variable} ${geistMono.variable}`}
     >
-      {/* font-sans를 Manrope로 매핑했다면 전체가 Manrope로 표시됩니다 */}
       <body className="bg-white text-gray-900 font-sans antialiased">
-        {/* 모바일 헤더 */}
-        <header className="md:hidden w-full px-6 py-4 flex justify-between items-center border-b fixed bg-white z-50">
-          <span className="font-bold text-xl">JOOSUNG KIM</span>
-          <nav className="flex space-x-4 text-sm text-gray-600">
-            <Link href="/work" className="hover:underline">
-              Work
-            </Link>
-            <Link href="/fun" className="hover:underline">
-              Fun
-            </Link>
-            <Link href="/contact" className="hover:underline">
-              Contact
-            </Link>
-          </nav>
-        </header>
+        {/* 모바일 헤더 (햄버거 메뉴) */}
+        <MobileHeader />
 
         {/* 전체 레이아웃 */}
         <div className="flex min-h-screen">

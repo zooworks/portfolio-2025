@@ -7,11 +7,12 @@ export default function Work() {
       <div className="px-6 max-w-4xl mx-auto antialiased">
         {/* 헤딩들 사이 간격은 space-y로 통일 */}
         <div className="space-y-1.5 md:space-y-2">
+          {/* 1줄차이: 점을 span 안으로 넣어서 'Joosung.' 으로 표시 */}
           <h1
             className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl
                    font-light leading-[1.15] tracking-[-0.01em]"
           >
-            Hello, I’m {/* ✅ 점을 span 안으로 넣어서 'Joosung.' 으로 보이게 */}
+            Hello, I’m{" "}
             <span className="font-semibold text-black">Joosung.</span>
           </h1>
 
@@ -26,11 +27,11 @@ export default function Work() {
             className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl
                    font-light leading-[1.15] tracking-[-0.01em]"
           >
-            {/* ✅ 공백을 명시적으로 넣어서 mobile에서도 깔끔하게 */}
+            {/* 데스크톱은 예전 그대로, 모바일에서만 intuitive 뒤에서 줄바꿈 */}
             who crafts <span className="font-semibold text-black">
               clear
             </span>, <span className="font-semibold text-black">intuitive</span>
-            , <br className="hidden sm:block" />
+            , <br className="sm:hidden" />
             {"and "}
             <span className="font-semibold text-black">
               emotionally resonant
@@ -44,7 +45,7 @@ export default function Work() {
           <br />
           Hongik Interaction Design ‘25
           <br />
-          Previously @ blockwave labs
+          Previously @ Blockwave Labs
         </p>
       </div>
 
