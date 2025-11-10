@@ -28,10 +28,7 @@ export default function Sidebar() {
   // ✅ 기본 사이드바
   return (
     <aside className="hidden md:flex w-64 flex-col fixed h-screen border-r px-6 py-10">
-      <Link
-        href="/work"
-        className="text-2xl font-bold mb-10 hover:underline text-left"
-      >
+      <Link href="/work" className="text-2xl font-bold mb-10 hover: text-left">
         JOOSUNG KIM
       </Link>
       <nav className="flex flex-col space-y-4 text-xl text-gray-600">
@@ -39,7 +36,7 @@ export default function Sidebar() {
           href="/work"
           className={clsx(
             "hover:underline",
-            pathname === "/work" && "font-bold text-black underline"
+            pathname === "/work" && "font-bold text-black"
           )}
         >
           Work
@@ -48,7 +45,7 @@ export default function Sidebar() {
           href="/fun"
           className={clsx(
             "hover:underline",
-            pathname === "/fun" && "font-bold text-black underline"
+            pathname === "/fun" && "font-bold text-black"
           )}
         >
           Fun
@@ -57,7 +54,7 @@ export default function Sidebar() {
           href="/contact"
           className={clsx(
             "hover:underline",
-            pathname === "/contact" && "font-bold text-black underline"
+            pathname === "/contact" && "font-bold text-black"
           )}
         >
           Contact

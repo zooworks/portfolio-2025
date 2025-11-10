@@ -28,9 +28,6 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Joosung Kim – Portfolio",
   description: "A thoughtful designer portfolio",
-  icons: {
-    icon: "/favicon.ico", // or your custom png
-  },
 };
 
 export default function RootLayout({
