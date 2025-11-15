@@ -89,7 +89,7 @@ export default function Work() {
               />
               <div className="absolute inset-0 flex flex-col justify-end p-4">
                 <h3 className="text-white text-sm sm:text-base font-semibold leading-tight">
-                  Case study: Market Kurly UX Revamp and New Service Planning
+                  Case study - Market Kurly UX Revamp and New Service Planning
                 </h3>
                 <p className="text-white text-xs sm:text-sm mt-1">
                   / 2023.05 – 2023.07
@@ -112,7 +112,7 @@ export default function Work() {
               />
               <div className="absolute inset-0 flex flex-col justify-end p-4">
                 <h3 className="text-white text-sm sm:text-base font-semibold leading-tight">
-                  Thesis – Human with AI/work in progress
+                  Thesis - Human with AI/work in progress
                 </h3>
                 <p className="text-white text-xs sm:text-sm mt-1">
                   / 2024.09 – 2025.08
@@ -135,7 +135,8 @@ export default function Work() {
               />
               <div className="absolute inset-0 flex flex-col justify-end p-4">
                 <h3 className="text-white text-sm sm:text-base font-semibold leading-tight">
-                  Codee
+                  Codee - AI-powered adaptive coding practice app for job
+                  seekers.
                 </h3>
                 <p className="text-white text-xs sm:text-sm mt-1">
                   / 2024.09 – 2025.08

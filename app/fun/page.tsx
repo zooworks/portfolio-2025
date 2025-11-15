@@ -88,6 +88,11 @@ const PROJECTS: Project[] = [
       { type: "image", src: "/eoe-07.jpg" },
     ],
   },
+  {
+    title: "Blade Runner Poster Design",
+    period: "2024.06 – 2024.06",
+    gallery: [{ type: "image", src: "/blade_runner.png" }],
+  },
 ];
 
 /* ========== 페이지 컴포넌트 ========== */
