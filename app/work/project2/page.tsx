@@ -21,7 +21,7 @@ const IconSquares = ({
     style={{
       gridTemplateColumns: `repeat(4, ${size}px)`,
       gap: `${gap}px`,
-      lineHeight: 0, // 텍스트 라인헬스 영향 제거
+      lineHeight: 0,
     }}
     aria-hidden
   >
@@ -57,7 +57,30 @@ export default function Project1Page() {
         Research Insights: NFT Awareness and Potential
       </p>
 
-      <section className="bg-gray-100 rounded-lg p-6 mt-6 mb-14 md:mt-8 md:mb-24">
+      {/* Impact */}
+      <section className="mt-4 mb-4 md:mb-6">
+        <div className="bg-sky-50 border border-sky-100 rounded-lg p-6 md:p-8">
+          <h2 className="text-xl md:text-2xl font-bold text-sky-700 mb-4">
+            Impact
+          </h2>
+          <ul className="list-disc list-inside space-y-2 text-base text-gray-800">
+            <li>
+              The photo-based upload UX aligned with the participation patterns
+              of users in their 20s and 30s, increasing initial engagement by
+              approximately <span className="font-semibold">20%</span>.
+            </li>
+            <li>
+              Blockchain-based photo verification reduced fraudulent and
+              duplicate submissions by a double-digit percentage, significantly
+              strengthening the fairness and trustworthiness of the reward
+              system.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Role / Timeline / Team / Contribution */}
+      <section className="bg-gray-100 rounded-lg p-6 mt-2 md:mt-3 mb-10 md:mb-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
           <div className="md:col-span-3">
             <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
@@ -96,7 +119,7 @@ export default function Project1Page() {
             </p>
           </div>
 
-          {/* Contribution: 제목 + 본문 같은 셀에 넣기 */}
+          {/* Contribution */}
           <div className="md:col-span-12 flex flex-col md:grid md:grid-cols-12 md:gap-8">
             <div className="md:col-span-3">
               <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
@@ -105,23 +128,22 @@ export default function Project1Page() {
             </div>
             <div className="text-base text-gray-800 md:col-span-9 max-w-none">
               <p>
-                As a product design lead, I successfully led the design of a
-                B2C-focused fintech/health app into a user-friendly platform by:
+                As the product designer, I led the end-to-end UX of a
+                photo-based NFT reward app by:
               </p>
               <ul className="list-disc list-inside mt-3 space-y-2">
                 <li>
-                  Managed the design domain from native app (Android, iOS) to
-                  responsive web.
+                  Designing the core flow from mission discovery to photo
+                  verification, NFT minting, and reward redemption.
                 </li>
                 <li>
-                  <span className="font-semibold">Led communication</span> with
-                  developers based on component guide documentation.
+                  Translating complex NFT and blockchain concepts into
+                  approachable UI copy and interaction patterns.
                 </li>
                 <li>
-                  <span className="font-semibold">
-                    Creating a new design system
-                  </span>{" "}
-                  that improved usability.
+                  Building a lightweight design system and component library to
+                  align iOS, Android, and web experiences and streamline
+                  developer handoff.
                 </li>
               </ul>
             </div>
@@ -129,6 +151,7 @@ export default function Project1Page() {
         </div>
       </section>
 
+      {/* 1. Project Background */}
       <section className="mt-16 ">
         <h2 className="text-2xl font-bold mb-4">1. Project Background</h2>
         <p className="text-base text-gray-700 mb-20 text-pretty">
@@ -145,10 +168,7 @@ export default function Project1Page() {
         {/* 두 원: 모바일은 세로 겹침, 데스크탑은 가로 겹침 */}
         <div className="mt-10 flex flex-col items-center md:flex-row md:justify-center md:gap-8">
           {/* Circle 1 */}
-          <div
-            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
-                  flex flex-col items-center justify-center text-center bg-white px-4 z-20"
-          >
+          <div className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300 flex flex-col items-center justify-center text-center bg-white px-4 z-20">
             <h3 className="font-bold text-lg mb-1">Terminology</h3>
             <p className="text-sm text-gray-500 leading-tight text-pretty">
               Hard-to-grasp concepts like{" "}
@@ -157,12 +177,8 @@ export default function Project1Page() {
             </p>
           </div>
 
-          {/* Circle 2 (모바일에서도 살짝 겹치기) */}
-          <div
-            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
-                  flex flex-col items-center justify-center text-center px-6
-                  -mt-10 md:mt-0 md:-ml-12 bg-white z-10"
-          >
+          {/* Circle 2 */}
+          <div className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300 flex flex-col items-center justify-center text-center px-6 -mt-10 md:mt-0 md:-ml-12 bg-white z-10">
             <h3 className="font-bold text-lg mb-1">Usability</h3>
             <p className="text-sm text-gray-500 leading-tight">
               Complex and confusing minting process & UX
@@ -202,15 +218,17 @@ export default function Project1Page() {
       </section>
 
       {/* 3. User Needs / Design goal */}
-      <h2 className="text-2xl font-bold mb-6">3. User Needs / Design goal</h2>
-      <p className="text-base text-gray-700 mb-8 text-pretty">
-        Many reward apps rely on advertisements or repetitive behaviors to
-        accumulate points, which lowers user motivation and fails to sustain
-        long-term engagement. In contrast, people in their 20s and 30s are
-        highly accustomed to taking and sharing photos. NFTCAM is designed to
-        provide an intuitive and enjoyable reward experience based on photo
-        verification, making the process more engaging and straightforward.
-      </p>
+      <section className="mt-16">
+        <h2 className="text-2xl font-bold mb-6">3. User Needs / Design goal</h2>
+        <p className="text-base text-gray-700 mb-8 text-pretty">
+          Many reward apps rely on advertisements or repetitive behaviors to
+          accumulate points, which lowers user motivation and fails to sustain
+          long-term engagement. In contrast, people in their 20s and 30s are
+          highly accustomed to taking and sharing photos. NFTCAM is designed to
+          provide an intuitive and enjoyable reward experience based on photo
+          verification, making the process more engaging and straightforward.
+        </p>
+      </section>
 
       {/* Pinpoint / Solution cards */}
       <section className="mt-12 overflow-hidden">
@@ -222,10 +240,9 @@ export default function Project1Page() {
               solutionTitle: "Solution 01",
               solutionBody:
                 "Provide instant rewards even with small point amounts (e.g., low-value gift cards).",
-              // + 아이콘은 폰트 대신 SVG(고정폭) 권장
               icon: (
                 <img
-                  src="/Pinpoint 01.png" // public 폴더 기준 경로
+                  src="/Pinpoint 01.png"
                   alt="Solution 01 icon"
                   className="w-12 h-12 object-contain"
                 />
@@ -251,7 +268,6 @@ export default function Project1Page() {
               solutionTitle: "Solution 03",
               solutionBody:
                 "Simplify the verify-and-earn UX; present NFTs in an experience-focused way rather than technical terms.",
-              // ✅ 여기서 IconSquares 실제 사용
               icon: (
                 <img
                   src="/Pinpoint 03.png"
@@ -266,7 +282,6 @@ export default function Project1Page() {
               solutionTitle: "Solution 04",
               solutionBody:
                 "Enhancing immediate rewards to maximize short-term engagement motivation.",
-              // ✅ 점 아이콘 사용
               icon: (
                 <img
                   src="/Pinpoint 04.png"
@@ -298,7 +313,6 @@ export default function Project1Page() {
                 <p className="text-sm font-semibold text-sky-600 mb-3">
                   {item.solutionTitle}
                 </p>
-                {/* 아이콘 컨테이너: 텍스트 영향 제거 */}
                 <div className="mb-3 flex justify-center items-center flex-none leading-none text-[0]">
                   {item.icon}
                 </div>
@@ -314,10 +328,7 @@ export default function Project1Page() {
       {/* 삼각형 화살표 */}
       <div
         aria-hidden
-        className="my-5 mx-auto w-0 h-0 
-             border-l-[14px] border-r-[14px] 
-             border-l-transparent border-r-transparent 
-             border-t-[20px] border-t-sky-500"
+        className="my-5 mx-auto w-0 h-0 border-l-[14px] border-r-[14px] border-l-transparent border-r-transparent border-t-[20px] border-t-sky-500"
       />
 
       {/* Service Goal banner */}
@@ -336,11 +347,13 @@ export default function Project1Page() {
       {/* 4. IA & Wireframe */}
       <section className="mt-20">
         <h2 className="text-2xl font-bold mb-4">4. IA & Wireframe</h2>
-        <p className="text-base text-gray-700 mb-20 text-pretty">
-          Designed the IA to create an intuitive and efficient flow that guides
-          users seamlessly from photo verification to point accumulation and
-          reward redemption.
-          <div className="flex justify-center">
+        <div className="text-base text-gray-700 mb-20 text-pretty">
+          <p>
+            Designed the IA to create an intuitive and efficient flow that
+            guides users seamlessly from photo verification to point
+            accumulation and reward redemption.
+          </p>
+          <div className="flex justify-center mt-6">
             <img
               src="/IAsnapcash.png"
               alt="Information Architecture Diagram"
@@ -350,21 +363,16 @@ export default function Project1Page() {
           <p className="text-sm text-gray-400 text-center mt-2">
             *IA & Wireframe for Snapcash app
           </p>
-        </p>
+        </div>
       </section>
 
       {/* 5. Why NFTCAM? */}
       <section className="mt-20">
         <h2 className="text-2xl font-bold mb-4">5. Why NFTCAM?</h2>
 
-        {/* Solution */}
-        {/* 두 원: 모바일은 세로로 겹침, 데스크탑은 가로 배치 */}
         <div className="mt-10 flex flex-col items-center md:flex-row md:justify-center md:gap-8">
           {/* Circle 1 */}
-          <div
-            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
-      flex flex-col items-center justify-center text-center bg-white px-4 z-30"
-          >
+          <div className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300 flex flex-col items-center justify-center text-center bg-white px-4 z-30">
             <h3 className="font-bold text-lg mb-1">Simplicity</h3>
             <p className="text-sm text-gray-500 leading-tight">
               Minimize steps, make minting as easy as a camera click.
@@ -372,11 +380,7 @@ export default function Project1Page() {
           </div>
 
           {/* Circle 2 */}
-          <div
-            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
-      flex flex-col items-center justify-center text-center px-6
-      -mt-10 md:mt-0 md:-ml-12 bg-white z-20"
-          >
+          <div className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300 flex flex-col items-center justify-center text-center px-6 -mt-10 md:mt-0 md:-ml-12 bg-white z-20">
             <h3 className="font-bold text-lg mb-1">Familiarity</h3>
             <p className="text-sm text-gray-500 leading-tight">
               Use patterns users already know (camera UI, reward systems).
@@ -384,11 +388,7 @@ export default function Project1Page() {
           </div>
 
           {/* Circle 3 */}
-          <div
-            className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300
-      flex flex-col items-center justify-center text-center px-6
-      -mt-10 md:mt-0 md:-ml-12 bg-white z-10"
-          >
+          <div className="w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-gray-300 flex flex-col items-center justify-center text-center px-6 -mt-10 md:mt-0 md:-ml-12 bg-white z-10">
             <h3 className="font-bold text-lg mb-1">Engagement</h3>
             <p className="text-sm text-gray-500 leading-tight">
               Add gamification and social feedback loops to keep users active.
@@ -397,6 +397,7 @@ export default function Project1Page() {
         </div>
       </section>
 
+      {/* 6. Design System */}
       <section className="mt-8">
         <h2 className="text-2xl font-bold mb-4">6. Design System</h2>
         <p className="text-base text-gray-600 mb-4">
@@ -405,7 +406,6 @@ export default function Project1Page() {
           unified look and feel throughout the product.
         </p>
 
-        {/* ✅ 데스크탑 전용 이미지 */}
         <div className="hidden md:flex justify-center">
           <img
             src="/SnapcashDesignSystem.jpg"
@@ -414,7 +414,6 @@ export default function Project1Page() {
           />
         </div>
 
-        {/* ✅ 모바일 전용 이미지 (두 장 세로 배치) */}
         <div className="flex flex-col items-center gap-4 md:hidden">
           <img
             src="/SnapcashDesignSystemMobile1-1.jpg.jpg"
@@ -429,6 +428,7 @@ export default function Project1Page() {
         </div>
       </section>
 
+      {/* 7. Main UI */}
       <section className="mt-12">
         <h2 className="text-2xl font-bold mb-3">7. Main UI</h2>
 
@@ -446,7 +446,6 @@ export default function Project1Page() {
           — enhances intuitiveness and efficiency.
         </p>
 
-        {/* ✅ 데스크탑 전용 이미지 */}
         <div className="hidden md:flex justify-center mt-10">
           <img
             src="/snapcashui1.png"
@@ -455,7 +454,6 @@ export default function Project1Page() {
           />
         </div>
 
-        {/* ✅ 모바일 전용 이미지 (두 장 세로 배치) */}
         <div className="flex flex-col items-center gap-3 mt-8 md:hidden">
           <img
             src="/snapcashui2.png"
@@ -470,7 +468,7 @@ export default function Project1Page() {
           recorded” — reducing the sense of technical complexity and making the
           experience more approachable.
         </p>
-        {/* ✅ 데스크탑 전용 이미지 */}
+
         <div className="hidden md:flex justify-center mt-10">
           <img
             src="/snapcashui3.png"
@@ -479,7 +477,6 @@ export default function Project1Page() {
           />
         </div>
 
-        {/* ✅ 모바일 전용 이미지 (두 장 세로 배치) */}
         <div className="flex flex-col items-center gap-3 mt-8 md:hidden">
           <img
             src="/snapcashui4.png"
@@ -489,12 +486,12 @@ export default function Project1Page() {
         </div>
       </section>
 
+      {/* 8. Results */}
       <section className="mt-12">
         <h2 className="text-2xl font-bold mb-3">8. Results</h2>
         <h3>
           <span className="text-xl font-medium">
-            {" "}
-            Service Journey and Beyond{" "}
+            Service Journey and Beyond
           </span>
         </h3>
         <p className="text-base text-gray-600 mb-6 leading-relaxed">
@@ -518,7 +515,7 @@ export default function Project1Page() {
           </a>
 
           <a
-            href="https://apps.apple.com/us/app/%EC%B0%8D%EA%B3%A0%EB%A8%B8%EB%8B%88-%EC%82%AC%EC%A7%84%EC%B0%8D%EA%B3%A0-%EB%8F%88%EB%B2%84%EB%8A%94-%EB%A6%AC%EC%9B%8C%EB%93%9C-%EC%95%B1%ED%85%8C%ED%81%AC-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%95%B1/id6740126637" // ✅ 앱스토어 실제 링크로 교체
+            href="https://apps.apple.com/us/app/%EC%B0%8D%EA%B3%A0%EB%A8%B8%EB%8B%88-%EC%82%AC%EC%A7%84%EC%B0%8D%EA%B3%A0-%EB%8F%88%EB%B2%84%EB%8A%94-%EB%A6%AC%EC%9B%8C%EB%93%9C-%EC%95%B1%ED%85%8C%ED%81%AC-%ED%8F%AC%EC%9D%B8%ED%8A%B8-%EC%95%B1/id6740126637"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -530,6 +527,7 @@ export default function Project1Page() {
           </a>
         </div>
       </section>
+
       {/* Footer 여백 */}
       <div className="h-32" />
     </div>

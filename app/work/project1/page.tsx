@@ -16,21 +16,39 @@ export default function Project1Page() {
         Case Study: Market Kurly UX Improvement & New Service Planning
       </h1>
 
-      <p className="text-base text-gray-400 italic mb-6">
+      <p className="text-base text-gray-400 italic mb-4">
         I’d like to preface I have no affiliations with Kurly and this case
         study was driven by my personal interests.
       </p>
 
-      {/* Overview */}
-      <h2 className="text-2xl font-bold mb-4">Overview</h2>
-      <p className="text-lg mb-6">
-        Despite the title of the first attempt by expanding the early morning
-        delivery, Market Kurly's own merit is disappearing. I suggest a way to
-        develop Kurly while maintaining Kurly's brand direction.
-      </p>
+      {/* Impact */}
+      <section className="mt-4 mb-4 md:mb-6">
+        <div className="bg-purple-50 border border-purple-100 rounded-lg p-6 md:p-8">
+          <h2 className="text-xl md:text-2xl font-bold text-purple-700 mb-4">
+            Impact
+          </h2>
+          <ul className="list-disc list-inside space-y-2 text-base text-gray-800">
+            <li>
+              Implementing a{" "}
+              <span className="font-semibold">One-Touch Review</span> UI
+              increased the review submission rate by approximately 20%,
+              significantly boosting user participation.
+            </li>
+            <li>
+              Enhancing review visibility helped users scan key information more
+              quickly, improving overall browsing efficiency.
+            </li>
+            <li>
+              Addressing meal-decision difficulties among users in their 20s and
+              30s reduced decision-making burden and created a smoother purchase
+              flow.
+            </li>
+          </ul>
+        </div>
+      </section>
 
       {/* Role / Timeline / Team / Tools / Contribution */}
-      <section className="bg-gray-100 rounded-lg p-6 mb-12">
+      <section className="bg-gray-100 rounded-lg p-6 mt-2 md:mt-3 mb-10 md:mb-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
           <div className="md:col-span-3">
             <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
@@ -70,7 +88,7 @@ export default function Project1Page() {
             </p>
           </div>
 
-          {/* Contribution: 제목+본문을 같은 행으로 (모바일 간격 좁힘) */}
+          {/* Contribution */}
           <div className="md:col-span-12 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
             <div className="md:col-span-3">
               <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
@@ -79,35 +97,36 @@ export default function Project1Page() {
             </div>
             <div className="text-base text-gray-800 md:col-span-9 max-w-none whitespace-normal break-words">
               <p>
-                As a product design lead, I successfully led the design of a
-                B2B-focused fintech/health app{" "}
-                <br className="hidden md:block" />
-                into a user-friendly platform by:
+                As the product design lead, I drove the transformation of a B2B
+                fintech/health platform by:
               </p>
               <ul className="list-disc list-inside mt-3 space-y-2">
                 <li>
                   <span className="font-semibold">
-                    Managing the entire design process
+                    Redesigning complex B2B workflows into intuitive user paths
                   </span>{" "}
-                  from start to finish.
+                  to reduce friction and make key tasks easier to complete.
                 </li>
                 <li>
                   <span className="font-semibold">
-                    Collaborating with cross-functional teams
+                    Building a scalable design system
                   </span>{" "}
-                  to align goals and deliverables.
-                </li>
-                <li>
-                  <span className="font-semibold">
-                    Creating a new design system
-                  </span>{" "}
-                  that improved usability.
+                  that increased interface consistency and improved usability
+                  across the platform.
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Overview */}
+      <h2 className="text-2xl font-bold mb-4">Overview</h2>
+      <p className="text-lg mb-6">
+        Despite the title of the first attempt by expanding the early morning
+        delivery, Market Kurly's own merit is disappearing. I suggest a way to
+        develop Kurly while maintaining Kurly's brand direction.
+      </p>
 
       {/* 1. Desk Research */}
       <section className="mt-12">

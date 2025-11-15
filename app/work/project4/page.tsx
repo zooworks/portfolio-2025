@@ -3,16 +3,51 @@ export default function Project1Page() {
 
   return (
     <div className="px-6 py-10 max-w-6xl mx-auto">
-      {/* ------------------ HEADER SECTION ------------------ */}
-      <h1 className="text-4xl font-bold mb-4">
+      {/* HEADER */}
+      <h1 className="text-4xl font-bold mb-6">
         Codee – Coding Test Practice App for Job Seekers
       </h1>
-      <p className="text-lg text-gray-700 mb-6">
-        Research Insights: NFT Awareness and Potential
+      <p className="text-lg text-gray-700 mb-4">
+        Research Insights: Adaptive Learning Feedback & Engagement
       </p>
 
-      <section className="bg-gray-50 rounded-lg p-6 mb-14 border border-gray-100">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+      {/* IMPACT */}
+      <section className="mt-4 mb-4 md:mb-6">
+        <div className="bg-blue-50 border border-blue-100 rounded-lg p-6 md:p-8">
+          <h2 className="text-xl md:text-2xl font-bold text-blue-700 mb-4">
+            Impact
+          </h2>
+          <ul className="list-disc list-inside text-gray-800 space-y-3 text-base leading-relaxed">
+            <li>
+              Introduced an{" "}
+              <span className="font-semibold">adaptive feedback system</span>{" "}
+              that reduced early-stage dropout by
+              <span className="font-semibold"> 15%</span> and increased average
+              session duration.
+            </li>
+            <li>
+              Implemented{" "}
+              <span className="font-semibold">
+                level-adjusted feedback and reward structures
+              </span>{" "}
+              that strengthened learners’ sense of progress and improved mission
+              completion rates by
+              <span className="font-semibold"> 20%</span>.
+            </li>
+            <li>
+              Enhanced motivation and weekly re-engagement through optimized
+              reward timing and gamification loops, contributing to a{" "}
+              <span className="font-semibold">double-digit increase</span> in
+              return activity.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* ------------------ INFO SECTION ------------------ */}
+      <section className="bg-gray-100 rounded-lg p-6 mt-1 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
+          {/* Role */}
           <div className="md:col-span-3">
             <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
               Role
@@ -20,6 +55,7 @@ export default function Project1Page() {
             <p className="text-base text-gray-800">Product Designer</p>
           </div>
 
+          {/* Timeline */}
           <div className="md:col-span-3">
             <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
               Timeline
@@ -27,6 +63,7 @@ export default function Project1Page() {
             <p className="text-base text-gray-800">Feb – Apr 2024 (2 Months)</p>
           </div>
 
+          {/* Team */}
           <div className="md:col-span-3">
             <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
               Team
@@ -38,6 +75,7 @@ export default function Project1Page() {
             </p>
           </div>
 
+          {/* Tools */}
           <div className="md:col-span-3">
             <h3 className="text-sm font-bold uppercase text-gray-600 mb-2">
               Tools
@@ -56,23 +94,22 @@ export default function Project1Page() {
               Contribution
             </h3>
             <p className="text-base text-gray-800 mb-3">
-              As a product design lead, I successfully led the design of a
-              B2C-focused fintech/health app into a user-friendly platform by:
+              As the product designer, I led the end-to-end UX of an adaptive
+              learning and coding-practice app by:
             </p>
+
             <ul className="list-disc list-inside text-gray-800 space-y-2">
               <li>
-                Managed the design domain from native app (Android, iOS) to
-                responsive web.
+                Designing reward and task flows focused on reducing cognitive
+                burden and supporting repeated practice.
               </li>
               <li>
-                <span className="font-semibold">Led communication</span> with
-                developers based on component guide documentation.
+                Conducting user interviews and analyzing behavioral patterns to
+                optimize feedback timing and difficulty scaling.
               </li>
               <li>
-                <span className="font-semibold">
-                  Creating a new design system
-                </span>{" "}
-                that improved usability.
+                Building a lightweight design system and interaction patterns
+                suitable for rapid iteration across iOS/Android.
               </li>
             </ul>
           </div>
@@ -86,7 +123,7 @@ export default function Project1Page() {
             key={index}
             src={src}
             alt={`Codee image ${index + 1}`}
-            className="w-full h-auto border-gray-200"
+            className="w-full h-auto border-gray-200 rounded-lg"
           />
         ))}
       </section>
