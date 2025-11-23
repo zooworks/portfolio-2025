@@ -5,6 +5,8 @@ import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import MobileHeader from "@/components/MobileHeader";
 
+import { Analytics } from "@vercel/analytics/next"; // ✅ 추가
+
 import { Manrope, Roboto, Geist, Geist_Mono } from "next/font/google";
 
 const manrope = Manrope({
@@ -41,9 +43,8 @@ export default function RootLayout({
       className={`${manrope.variable} ${roboto.variable} ${geistSans.variable} ${geistMono.variable}`}
     >
       <body className="bg-white text-gray-900 font-sans antialiased">
-        {/* 모바일 헤더 (햄버거 메뉴) */}
+        {/* 모바일 헤더 */}
         <MobileHeader />
-
         {/* 전체 레이아웃 */}
         <div className="flex min-h-screen">
           <div className="hidden md:flex">
@@ -54,6 +55,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
+        <Analytics /> {/* ✅ 추가: body 닫히기 직전 */}
       </body>
     </html>
   );

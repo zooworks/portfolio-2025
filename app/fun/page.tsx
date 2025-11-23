@@ -93,6 +93,16 @@ const PROJECTS: Project[] = [
     period: "2024.06 – 2024.06",
     gallery: [{ type: "image", src: "/blade_runner.png" }],
   },
+  {
+    title: "I'm me - Personality assessment platform",
+    period: "2022.07 – 2022.09",
+    gallery: [
+      { type: "image", src: "/im_me1.jpg" },
+      { type: "image", src: "/im_me3.jpg" },
+      { type: "image", src: "/im_me4.jpg" },
+      { type: "image", src: "/im_me5.jpg" },
+    ],
+  },
 ];
 
 /* ========== 페이지 컴포넌트 ========== */
