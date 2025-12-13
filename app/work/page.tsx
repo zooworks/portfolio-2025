@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -20,7 +21,7 @@ export default function Work() {
             className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl
                    font-light leading-[1.15] tracking-[-0.01em]"
           >
-            I’m a Product Designer
+            I’m a UX Researcher
           </h2>
 
           <h3
@@ -47,12 +48,32 @@ export default function Work() {
           <br />
           Previously @ Blockwave Labs
         </p>
+        <div className="mt-8">
+          <a
+            href="/JoosungKim_BriefPortfolio.pdf"
+            className="
+    inline-flex items-center justify-center
+    rounded-2xl
+    border border-gray-800
+    px-8 py-4
+    text-base font-medium text-gray-900
+    shadow-sm
+    transition-all duration-300
+    hover:border-transparent
+    hover:bg-gradient-to-br hover:from-gray-900 hover:to-black
+    hover:text-white
+    hover:shadow-lg
+  "
+          >
+            Brief Portfolio
+          </a>
+        </div>
       </div>
 
       {/* ====== 프로젝트 카드 섹션 ====== */}
       <div className="px-6 py-10 max-w-4xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* 카드 2 */}
+          {/* 카드 1 */}
           <Link
             href="/work/project2"
             className="group block rounded-[20px] overflow-hidden shadow-md"
@@ -75,7 +96,7 @@ export default function Work() {
             </div>
           </Link>
 
-          {/* 카드 1 */}
+          {/* 카드 2 */}
           <Link
             href="/work/project1"
             className="group block rounded-[20px] overflow-hidden"
